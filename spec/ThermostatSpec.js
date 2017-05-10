@@ -39,6 +39,14 @@ describe('Thermostat', function(){
     expect(thermostat.getTemperature()).toEqual(25);
   });
 
+  it('has a max temp of 32 when PSM off', function(){
+    thermostat.switchPSMOff()
+    for (var i = 0; i < 13; i ++){
+      thermostat.increase();
+    }
+    expect(thermostat.getTemperature()).toEqual(32);
+  });
+
   it('can turn off power saving mode', function(){
     thermostat.switchPSMOff();
     expect(thermostat.isPowerSavingModeOn()).toBe(false);
