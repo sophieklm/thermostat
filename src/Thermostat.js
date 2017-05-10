@@ -40,3 +40,7 @@ Thermostat.prototype.isPowerSavingModeOn = function() {
 Thermostat.prototype.switchPSMOff = function() {
   return this.powerSavingMode = false;
 };
+
+Thermostat.prototype.switchPSMOn = function() {
+  return this.powerSavingMode = true;
+};

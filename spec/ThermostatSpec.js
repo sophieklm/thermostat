@@ -44,4 +44,10 @@ describe('Thermostat', function(){
     expect(thermostat.isPowerSavingModeOn()).toBe(false);
   });
 
+  it('can turn on power saving mode', function(){
+    thermostat.switchPSMOff();
+    thermostat.switchPSMOn();
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
+
 });
