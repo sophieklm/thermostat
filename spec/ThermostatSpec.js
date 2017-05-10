@@ -40,7 +40,8 @@ describe('Thermostat', function(){
   });
 
   it('can turn off power saving mode', function(){
-
+    thermostat.switchPSMOff();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
   });
 
 });
