@@ -14,7 +14,7 @@ describe('Thermostat', function(){
   it('can increase the temperature', function(){
     thermostat.increase();
     expect(thermostat.getTemperature()).toEqual(21);
-  })
+  });
 
   it('can decrease the temperature', function() {
     thermostat.decrease();
@@ -30,6 +30,17 @@ describe('Thermostat', function(){
 
   it('has a power saving mode on by default', function(){
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
+
+  it('has a max temp of 25 when PSM on', function(){
+    for (var i = 0; i < 6; i ++){
+      thermostat.increase();
+    }
+    expect(thermostat.getTemperature()).toEqual(25);
+  });
+
+  it('can turn off power saving mode', function(){
+
   });
 
 });
