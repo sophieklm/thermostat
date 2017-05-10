@@ -58,4 +58,12 @@ describe('Thermostat', function(){
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
 
+  it('can reset temperature to default', function(){
+    for (var i = 0; i < 4; i ++){
+      thermostat.increase();
+    }
+    thermostat.resetTemperature();
+    expect(thermostat.getTemperature()).toEqual(20);
+  })
+
 });
