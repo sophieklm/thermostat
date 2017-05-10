@@ -7,6 +7,7 @@ function Thermostat(){
   this.DEFAULT_TEMPERATURE = 20;
   this.temperature = this.DEFAULT_TEMPERATURE;
   this.powerSavingMode = true;
+  this.MEDIUM_ENERGY_USAGE_LIMIT = 18;
 }
 
 Thermostat.prototype.getTemperature = function() {
@@ -52,4 +53,14 @@ Thermostat.prototype.switchPSMOn = function() {
 
 Thermostat.prototype.resetTemperature = function() {
   return this.temperature = this.DEFAULT_TEMPERATURE;
+}
+
+Thermostat.prototype.energyUsage = function() {
+  if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT){
+    return 'low-usage';
+  }
+  if (this.temperature > this.MAX_TEMP_PSM_ON){
+    return 'high-usage';
+  }
+  return 'medium-usage';
 }
