@@ -28,4 +28,8 @@ describe('Thermostat', function(){
     expect(thermostat.getTemperature()).toEqual(10);
   });
 
+  it('has a power saving mode on by default', function(){
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
+
 });
