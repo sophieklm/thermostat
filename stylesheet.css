@@ -1,0 +1,84 @@
+body {
+  background-image: ;
+}
+
+#thermostat-settings {
+  position: relative;
+  clear: both;
+  top: 100px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav {
+  position: fixed;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+#weather-settings {
+  position: relative;
+  top: 200px;
+  clear: both;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background-color: black;
+  width: 100%;
+}
+
+h1 {
+ color:  black;
+}
+
+button {
+   border: solid 2px;
+   text-align: center;
+   font-size: 100%;
+   border-radius: 5px;
+   margin: 0 auto;
+   padding: 5px;
+   width: 100px;
+}
+
+section {
+  position: relative;
+  top: 50px;
+}
+
+#reset{ 
+  background-color: orange;
+}
+
+#increase-temp{ 
+  background-color: #ff5050;
+}
+
+#decrease-temp{ 
+  background-color: #66ccff;
+}
+
+#psm-on, #psm-off{ 
+  background-color: rgb(74, 195, 162);
+}
+
+.low-usage {
+  color: #50c750;
+}
+
+.medium-usage {
+  color:#4f82ce;
+}
+
+.high-usage {
+  color: #e85252;
+}
