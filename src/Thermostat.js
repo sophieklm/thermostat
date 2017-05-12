@@ -48,19 +48,33 @@ Thermostat.prototype.switchPSMOff = function() {
 };
 
 Thermostat.prototype.switchPSMOn = function() {
+  if (this.temperature > this.MAX_TEMP_PSM_ON) {
+    this.temperature = this.MAX_TEMP_PSM_ON;
+  }
   return this.powerSavingMode = true;
 };
 
+Thermostat.prototype.togglePSM = function() {
+  if (this.temperature > this.MAX_TEMP_PSM_ON) {
+    this.temperature = this.MAX_TEMP_PSM_ON;
+  }
+  if (this.isPowerSavingModeOn()){
+    return this.switchPSMOff();
+  }
+  return this.switchPSMOn();
+};
+
+
 Thermostat.prototype.resetTemperature = function() {
   return this.temperature = this.DEFAULT_TEMPERATURE;
-}
+};
 
 Thermostat.prototype.energyUsage = function() {
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT){
     return 'low-usage';
-  }
-  if (this.temperature > this.MAX_TEMP_PSM_ON){
+  };
+  if (this.temperature >= this.MAX_TEMP_PSM_ON){
     return 'high-usage';
-  }
+  };
   return 'medium-usage';
-}
+};

@@ -4,6 +4,7 @@
   <head>
     <title>Thermostat</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="src/Thermostat.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="index.js"></script>
@@ -11,19 +12,24 @@
 
   <body>
     <nav>
-    <button id="increase-temp">+</button>
     <button id="decrease-temp">-</button>
+    <button id="increase-temp">+</button>
+    <button id="reset">Reset</button>
     <button id="psm-on">PSM On</button>
     <button id="psm-off">PSM Off</button>
-    <button id="reset">Reset</button>
+    <button id="psm-toggle">PSM Toggle</button>
     </nav>
+
   <section id="thermostat-settings">
-    <h1>Set Temperature: <span id="temperature"></span>&deg;C</h1>
+    <h1>Set Temperature:</h1>
+    <h1 class="temp"><span id="temperature"></span>&deg;C</h1>
     <h1>Energy: <span id="energy-usage"></span></h1>
     <h1>Power Saving Mode: <span id="psm-mode"></span></h1>
   </section>
+
   <section id="weather-settings">
-    <h1>Current temperature: <span id="current-temperature"></span>&deg;C</h1>
+    <h1>Current temperature:</h1>
+    <h1 class="temp"><span id="current-temperature"></span>&deg;C</h1>
     <h1>Select City:
     <select id="current-city">
       <option value="london">London</option>
@@ -33,6 +39,7 @@
     </select>
     </h1>
   </section>
+
   <footer>
   </footer>
   </body>
