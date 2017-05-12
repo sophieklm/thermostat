@@ -79,7 +79,7 @@ $("#save-settings").click(function(){
 $("#load-settings").click(function(){
     $.get("http://localhost:9292/temperature", function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
-        thermostat.temperature = data;
+        thermostat.temperature = parseInt(data);
         $('#temperature').text(data);
         updateTemperature();
     });
