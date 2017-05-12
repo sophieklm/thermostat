@@ -1,7 +1,6 @@
 $( document ).ready(function() {
    var thermostat = new Thermostat();
    updateTemperature();
-
    displayWeather('London');
    $( '#psm-mode' ).text('On');
 
@@ -53,7 +52,7 @@ $( document ).ready(function() {
    }
 
    function displayWeather(city) {
-   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=188d4bfce0208cc4d0252a7dc677a8f6&units=metric', function(data) {
+   $.get('https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=188d4bfce0208cc4d0252a7dc677a8f6&units=metric', function(data) {
      $('#current-temperature').text(data.main.temp);
    });
    }
@@ -66,24 +65,24 @@ $( document ).ready(function() {
      $( '#psm-mode' ).text('Off');}
    }
 
-$("#save-settings").click(function(){
-    $.post("http://localhost:9292/temperature",
-    {
-        saved_temperature: thermostat.temperature,
-    },
-    function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-    });
-});
+  $("#save-settings").click(function(){
+      $.post("https://sophieklm.github.io/thermostat/",
+      {
+          saved_temperature: thermostat.temperature,
+      },
+      function(data, status){
+          alert("Data: " + data + "\nStatus: " + status);
+      });
+  });
 
-$("#load-settings").click(function(){
-    $.get("http://localhost:9292/temperature", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-        thermostat.temperature = parseInt(data);
-        $('#temperature').text(data);
-        updateTemperature();
-    });
-});
+  $("#load-settings").click(function(){
+      $.get("https://sophieklm.github.io/thermostat/", function(data, status){
+          alert("Data: " + data + "\nStatus: " + status);
+          thermostat.temperature = parseInt(data);
+          $('#temperature').text(data);
+          updateTemperature();
+      });
+  });
 
 
 });
