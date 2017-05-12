@@ -66,7 +66,7 @@ $( document ).ready(function() {
    }
 
   $("#save-settings").click(function(){
-      $.post("http://localhost:9292/temperature ",
+      $.post("http://localhost:9292/temperature",
       {
           saved_temperature: thermostat.temperature,
       },
