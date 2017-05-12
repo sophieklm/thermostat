@@ -7,6 +7,7 @@ Temperature setting can be stored and retrieved using the save and load settings
 
 ```
 $ git clone https://github.com/sophieklm/thermostat
+$ cd thermostat
 $ bundle
 $ rackup
 ```
