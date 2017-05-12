@@ -1,6 +1,7 @@
 $( document ).ready(function() {
-  var thermostat = new Thermostat();
+   var thermostat = new Thermostat();
    updateTemperature();
+
    displayWeather('London');
    $( '#psm-mode' ).text('On');
 
@@ -62,8 +63,27 @@ $( document ).ready(function() {
      $( '#psm-mode' ).text('On');
      }
      else {
-     $( '#psm-mode' ).text('Off');};
-   };
- 
+     $( '#psm-mode' ).text('Off');}
+   }
+
+$("#save-settings").click(function(){
+    $.post("http://localhost:9292/temperature",
+    {
+        saved_temperature: thermostat.temperature,
+    },
+    function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+});
+
+$("#load-settings").click(function(){
+    $.get("http://localhost:9292/temperature", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+        thermostat.temperature = data;
+        $('#temperature').text(data);
+        updateTemperature();
+    });
+});
+
 
 });
