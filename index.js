@@ -52,7 +52,7 @@ $( document ).ready(function() {
    }
 
    function displayWeather(city) {
-   $.get('https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=188d4bfce0208cc4d0252a7dc677a8f6&units=metric', function(data) {
+   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=188d4bfce0208cc4d0252a7dc677a8f6&units=metric', function(data) {
      $('#current-temperature').text(data.main.temp);
    });
    }
@@ -66,7 +66,7 @@ $( document ).ready(function() {
    }
 
   $("#save-settings").click(function(){
-      $.post("https://sophieklm.github.io/thermostat/",
+      $.post("http://localhost:9292/temperature ",
       {
           saved_temperature: thermostat.temperature,
       },
@@ -76,7 +76,7 @@ $( document ).ready(function() {
   });
 
   $("#load-settings").click(function(){
-      $.get("https://sophieklm.github.io/thermostat/", function(data, status){
+      $.get("http://localhost:9292/temperature", function(data, status){
           alert("Data: " + data + "\nStatus: " + status);
           thermostat.temperature = parseInt(data);
           $('#temperature').text(data);
